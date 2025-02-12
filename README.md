@@ -23,12 +23,12 @@ To get started with the project, follow these steps:
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/yourusername/post-and-comments.git
+    git clone https://github.com/Veerendra-Prasad/PC-project.git
     ```
 
 2. Navigate to the project directory:
     ```sh
-    cd post-and-comments
+    cd PC-project
     ```
 
 3. Open `index.html` in your browser to use the application.
@@ -64,7 +64,7 @@ Contributions are welcome! If you'd like to contribute to the project, follow th
 5. Open a Pull Request.
 
 ## Contact
-For any questions or feedback, please feel free to reach out to me at [your-email@example.com].
+For any questions or feedback, please feel free to reach out to me at [veerendraprasadkarnam27@gmail.com].
 
 ---
 
