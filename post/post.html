@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project PC</title>
+    <link rel="stylesheet" href="./post.css" />
+  </head>
+  <body>
+    <div class="post-wrapper">
+      <form onsubmit="handleSubmit(event)"  class="post-form">
+        <label for="post-author">Author Name: </label>
+        <input type="text" placeholder="Enter Name here.." required="true" class="input-author" id="post-author" />
+        <label for="post-title">Enter the Title here: </label>
+        <input
+          type="text"
+          placeholder="Type the title of the post here"
+          required="true"
+          class="input-title"
+          id="post-title"
+        />
+        <textarea
+          name="post-input"
+          id="post-input"
+          placeholder="Type the post here..."
+          required="true"
+          class="input-desc"
+        ></textarea>
+        <section class="button-container">
+          <button type="submit">Create Post</button>
+        </section>
+      </form>
+    </div>
+  </body>
+  <script type="module" src="./createPost.js"></script>
+</html>
