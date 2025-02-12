@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.comment {
+  width: 100%;
+  height: fit-content;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  background-color: #f9f9f9;
+  border-left: 4px solid #ddd;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+}
+
+.comment > .comment-header {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  color: gray;
+  justify-content: space-between;
+}
+
+.comment-desc {
+  padding: 5px;
+}
+
+span {
+  padding: 5px;
+}
+
+.comment-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.comment-section {
+  width: 50%;
+  height: 50%;
+  display: flex;
+  background-color: rgb(242, 234, 234);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.comment-section > label {
+  width: 100%;
+  padding-left: 25px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: large;
+}
+
+.comment-section > textarea {
+  width: 93%;
+  max-width: 100%;
+  height: 25%;
+  padding: 5px;
+}
+
+.input-author {
+  width: 93%;
+  height: 9%;
+  padding-left: 5px;
+  outline: none;
+}
+
+.comment-section > button {
+  width: 60px;
+  height: 30px;
+  background-color: rgb(73, 255, 252);
+  border-radius: 8%;
+  outline: none;
+  border: 2px solid black;
+}
+
+.content-section {
+  width: 100%;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: black;
+  font-size: medium;
+}
