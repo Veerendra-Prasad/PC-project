@@ -65,7 +65,3 @@ Contributions are welcome! If you'd like to contribute to the project, follow th
 
 ## Contact
 For any questions or feedback, please feel free to reach out to me at [veerendraprasadkarnam27@gmail.com].
-
----
-
-Feel free to customize this README file according to the specific needs and details of your project. Happy coding! 😊
