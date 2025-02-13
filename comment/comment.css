@@ -95,3 +95,34 @@ span {
   color: black;
   font-size: medium;
 }
+
+@media (max-width: 600px) {
+  .comment-section {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+  }
+
+  .comment-section > label {
+    font-size: medium;
+    padding-left: 10px;
+  }
+
+  .comment-section > textarea {
+    width: 100%;
+    height: 50%;
+    padding: 10px;
+  }
+
+  .input-author {
+    width: 100%;
+    height: 10%;
+    padding-left: 10px;
+  }
+
+  .comment-section > button {
+    width: 80px;
+    height: 40px;
+    font-size: medium;
+  }
+}

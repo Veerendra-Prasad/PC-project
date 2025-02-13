@@ -50,10 +50,10 @@ textarea {
   justify-content: center;
 }
 
-button {
-  width: fit-content;
+.post-button {
+  width: 40%;
   height: 30px;
-  /* background-color: #c8c7c7; */
+  background-color: rgb(73, 255, 252);
   border-radius: 8%;
   outline: none;
   border: 2px solid black;
@@ -89,10 +89,11 @@ button {
 }
 
 .button{
-  width: 5%;
-  outline:none;
+  width: 60px;
+  height: 30px;
+  border-radius: 8%;
+  outline: none;
   border: none;
-  font-size: larger;
 }
 
 @media (max-width: 600px) {
@@ -101,8 +102,8 @@ button {
   }
 
   .post-wrapper {
-    width: 90%;
-    height: auto;
+    width: 100%;
+    height: 100%;
   }
 
   .post-form {
@@ -111,20 +112,21 @@ button {
   }
 
   input, textarea {
-    font-size: 12px;
-  }
-
-  button {
-    font-size: 12px;
-    height: 25px;
-  }
-
-  .title-section {
     font-size: 14px;
   }
 
+  button {
+    width: 30%;
+    font-size: 14px;
+    height: 30px;
+  }
+
+  .title-section {
+    font-size: 16px;
+  }
+
   .button {
-    width: 10%;
-    font-size: medium;
+    width: 20%;
+    font-size: large;
   }
 }
