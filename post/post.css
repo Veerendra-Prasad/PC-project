@@ -51,9 +51,9 @@ textarea {
 }
 
 button {
-  width: 100px;
+  width: fit-content;
   height: 30px;
-  background-color: rgb(73, 255, 252);
+  /* background-color: #c8c7c7; */
   border-radius: 8%;
   outline: none;
   border: 2px solid black;
@@ -93,4 +93,38 @@ button {
   outline:none;
   border: none;
   font-size: larger;
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+
+  .post-wrapper {
+    width: 90%;
+    height: auto;
+  }
+
+  .post-form {
+    gap: 10px;
+    padding: 5px;
+  }
+
+  input, textarea {
+    font-size: 12px;
+  }
+
+  button {
+    font-size: 12px;
+    height: 25px;
+  }
+
+  .title-section {
+    font-size: 14px;
+  }
+
+  .button {
+    width: 10%;
+    font-size: medium;
+  }
 }
