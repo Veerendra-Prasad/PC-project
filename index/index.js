@@ -1,4 +1,4 @@
-import { getData, randomId, deleteCommentById,deletePostById, initializeDatabase } from "./database/database.js";
+import { getData, randomId, deleteCommentById,deletePostById, initializeDatabase } from "../database/database.js";
 
 const comment_container = document.querySelector(".comment-container");
 const user_post = document.querySelector(".posts-container");
@@ -13,12 +13,12 @@ delete_post.style.display = "none";
 
 create_post.addEventListener("click", () => {
   const item_id = randomId();
-  window.location.href = `./post/post.html?data=${item_id}`;
+  window.location.href = `../post/post.html?data=${item_id}`;
 });
 
 create_comment.addEventListener("click", () => {
   const item_id = new URLSearchParams(window.location.search).get("data");
-  window.location.href = `./comment/comment.html?data=${item_id}`;
+  window.location.href = `../comment/comment.html?data=${item_id}`;
 });
 
 delete_post.addEventListener("click", async () => {

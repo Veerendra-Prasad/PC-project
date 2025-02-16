@@ -1,6 +1,6 @@
 const templateContent = document.createElement("template");
 templateContent.innerHTML = `
-<link rel="stylesheet" href="./comment/comment.css" />
+<link rel="stylesheet" href="../comment/comment.css" />
 <div class="comment">
   <div class="comment-header">
     <span>

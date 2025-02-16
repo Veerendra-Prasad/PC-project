@@ -1,7 +1,7 @@
 const template = document.createElement("template");
 template.innerHTML = `
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="./post/post.css" />
+  <link rel="stylesheet" href="../post/post.css" />
   <div class="post">
     <span><slot name="author"/></span>
     <div class="title-section">
