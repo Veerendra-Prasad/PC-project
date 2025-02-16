@@ -11,6 +11,8 @@ body {
   justify-content: center;
   align-items: center;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 .comment {
@@ -18,7 +20,7 @@ body {
   height: fit-content;
   border: 1px solid #ddd;
   border-radius: 3px;
-  background-color: #f9f9f9;
+  background-color: var(--background-color);
   border-left: 4px solid #ddd;
   padding: 10px 15px;
   margin-bottom: 10px;
@@ -28,12 +30,14 @@ body {
   width: 100%;
   height: fit-content;
   display: flex;
-  color: gray;
+  color: var(--header-text-color);
   justify-content: space-between;
+  background-color: var(--header-background-color);
 }
 
 .comment-desc {
   padding: 5px;
+  color: var(--comment-text-color);
 }
 
 span {
@@ -62,7 +66,6 @@ span {
 .comment-section > label {
   width: 100%;
   padding-left: 25px;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: large;
 }
 
@@ -91,7 +94,6 @@ span {
 
 .content-section {
   width: 100%;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   color: black;
   font-size: medium;
 }
