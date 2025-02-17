@@ -6,6 +6,8 @@
   --comment-text-color: #666;
   --slider-background-color: #ccc;
   --slider-checked-background-color: #2196F3;
+  --button-background-color : #fff;
+  --button-color : #333;
 }
 
 [data-theme="dark"] {
@@ -16,9 +18,12 @@
   --comment-text-color: #bbb;
   --slider-background-color: #555;
   --slider-checked-background-color: #4CAF50;
+  --button-background-color : #333;
+  --button-color : #fff;
 }
 
 body {
+  font-family: "Poppins", sans-serif;
   background-color: var(--background-color);
   color: var(--text-color);
 }
@@ -80,8 +85,10 @@ input:checked + .slider {
 }
 
 .create-post,.delete-post,.create-comment,.delete-comment{
-  background-color: var(--background-color);
-  color: var(--header-background-color);
+  background-color: var(--button-background-color);
+  color: var(--button-color);
+  outline: none;
+  border: none;
 }
 
 .posts-container,.comment-container {
@@ -161,6 +168,8 @@ input:checked + .slider {
   display: flex;
   justify-content: end;
   align-items: center;
+  font-weight: 600;
+  gap: 25px;
 }
 
 .switch {
