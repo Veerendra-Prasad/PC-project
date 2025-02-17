@@ -5,35 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>posts and comments</title>
     <link rel="stylesheet" href="./style.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
   </head>
   <body>
     <div class="wrapper">
-      <div class="post-container">
-        <div class="container-header">
-          <h1>Posts</h1>
-          <div class="buttons-container">
-            <button class="delete-post"><i class="material-icons">delete</i></button>
-            <button class="create-post"><i class="material-icons">edit</i></button>
-          </div>
-        </div>
-        <div class="posts-container">
-        </div>
+      <div class="nav">
+        <span>Darkmode</span>
+        <label class="switch">
+          <input type="checkbox" id="toggleSwitch" />
+          <span class="slider"></span>
+        </label>
       </div>
-      <div class="container-comment">
-        <div class="container-header">
-          <h1>Comments</h1>
-          <div class="buttons-container">
-            <button class="delete-comment"><i class="material-icons">delete</i></button>
-            <button class="create-comment"><i class="material-icons">edit</i></button>
+      <div class="content-container">
+        <div class="post-container">
+          <div class="container-header">
+            <h1>Posts</h1>
+            <div class="buttons-container">
+              <button class="delete-post">
+                <i class="material-icons">delete</i>
+              </button>
+              <button class="create-post">
+                <i class="material-icons">edit</i>
+              </button>
+            </div>
           </div>
+          <div class="posts-container"></div>
         </div>
-        <div class="comment-container">
+        <div class="container-comment">
+          <div class="container-header">
+            <h1>Comments</h1>
+            <div class="buttons-container">
+              <button class="delete-comment">
+                <i class="material-icons">delete</i>
+              </button>
+              <button class="create-comment">
+                <i class="material-icons">edit</i>
+              </button>
+            </div>
+          </div>
+          <div class="comment-container"></div>
         </div>
       </div>
     </div>
   </body>
   <script src="./index.js" type="module"></script>
-  <script src="../post/post.js" type="module" ></script>
-  <script src="../comment/comment.js" type="module" ></script>
+  <script src="../post/post.js" type="module"></script>
+  <script src="../comment/comment.js" type="module"></script>
 </html>

@@ -1,4 +1,10 @@
-import { getData, randomId, deleteCommentById,deletePostById, initializeDatabase } from "../database/database.js";
+import {
+  getData,
+  randomId,
+  deleteCommentById,
+  deletePostById,
+  initializeDatabase,
+} from "../database/database.js";
 
 const comment_container = document.querySelector(".comment-container");
 const user_post = document.querySelector(".posts-container");
@@ -100,3 +106,39 @@ function create_comments(comments) {
     comment_container.append(comment);
   });
 }
+
+const toggleSwitch = document.getElementById("toggleSwitch");
+
+toggleSwitch.addEventListener("change", function () {
+  if (this.checked) {
+    const urlInBrowser = new URLSearchParams(window.location.search).get(
+      "mode"
+    );
+    const url = new URL(window.location.href);
+    if (urlInBrowser == null) {
+      document.documentElement.setAttribute("data-theme", "dark");
+      let updatedUrl = `${url}?&mode=dark`;
+      window.history.pushState({ path: updatedUrl }, "", updatedUrl);
+    } else if(urlInBrowser === "light"){
+      url.searchParams.set('mode','dark');
+      document.documentElement.setAttribute("data-theme", "dark");
+      let updatedUrl = url.toString();
+      window.history.pushState({ path: updatedUrl }, "", updatedUrl);
+    }
+  } else {
+    const urlInBrowser = new URLSearchParams(window.location.search).get(
+      "mode"
+    );
+    const url = new URL(window.location.href);
+    if (urlInBrowser == null) {
+      document.documentElement.setAttribute("data-theme", "light");
+      let updatedUrl = `${url}?&mode=light`;
+      window.history.pushState({ path: updatedUrl }, "", updatedUrl);
+    } else if(urlInBrowser === "dark"){
+      document.documentElement.setAttribute("data-theme", "light");
+      url.searchParams.set('mode','light');
+      let updatedUrl = url.toString();
+      window.history.pushState({ path: updatedUrl }, "", updatedUrl);
+    }
+  }
+});
