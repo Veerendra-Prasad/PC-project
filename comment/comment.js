@@ -24,15 +24,15 @@ class comment extends HTMLElement {
   }
   connectedCallback() {
     this.shadowRoot.querySelector(".comment").addEventListener("click", () => {
-      const url = new URLSearchParams(window.location.search).get(
-        "comment-data"
-      );
-      const dataUrl = new URLSearchParams(window.location.search).get("data");
-      if (url === null || !url.includes(this.getAttribute("comment-id"))) {
-        const newUrl = `./index.html?data=${dataUrl}&comment-data=${this.getAttribute(
-          "comment-id"
-        )}`;
-        window.history.pushState(null, "", newUrl);
+      const url = new URLSearchParams(window.location.search).get("comment-id");
+      if (url == null) {
+        const new_url = new URL(window.location.href);
+        new_url.searchParams.append("comment-id",this.getAttribute("comment-id"));
+        window.history.replaceState(null,"",new_url.toString());
+      } else {
+        const new_url = new URL(window.location.href);
+        new_url.searchParams.set("comment-id", this.getAttribute("comment-id"));
+        window.history.replaceState(null,"",new_url.toString());
       }
     });
   }

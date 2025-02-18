@@ -12,6 +12,7 @@ const create_post = document.querySelector(".create-post");
 const create_comment = document.querySelector(".create-comment");
 const delete_post = document.querySelector(".delete-post");
 const delete_comment = document.querySelector(".delete-comment");
+const toggleSwitch = document.getElementById("toggleSwitch");
 
 create_comment.style.display = "none";
 delete_comment.style.display = "none";
@@ -19,19 +20,22 @@ delete_post.style.display = "none";
 
 create_post.addEventListener("click", () => {
   const item_id = randomId();
-  window.location.href = `../post/post.html?data=${item_id}`;
+  const url = new URLSearchParams(window.location.search).get("mode");
+  window.location.href = `../post/post.html?data=${item_id}&mode=${url}`;
 });
 
 create_comment.addEventListener("click", () => {
   const item_id = new URLSearchParams(window.location.search).get("data");
-  window.location.href = `../comment/comment.html?data=${item_id}`;
+  const url = new URLSearchParams(window.location.search).get("mode");
+  window.location.href = `../comment/comment.html?data=${item_id}&mode=${url}`;
 });
 
 delete_post.addEventListener("click", async () => {
   const data_id = new URLSearchParams(window.location.search).get("data");
+  const mode = new URLSearchParams(window.location.search).get("mode");
   const result = await deletePostById(data_id);
   if (result == "done") {
-    window.location.href = `./index.html`;
+    window.location.href = `./index.html?mode=${mode}`;
   } else if (result == "error") {
     alert("Error while deleting post");
   }
@@ -39,12 +43,14 @@ delete_post.addEventListener("click", async () => {
 
 delete_comment.addEventListener("click", async () => {
   const comment_id = new URLSearchParams(window.location.search).get(
-    "comment-data"
+    "comment-id"
   );
+  console.log("here")
   const data_id = new URLSearchParams(window.location.search).get("data");
+  const mode = new URLSearchParams(window.location.search).get("mode");
   const result = await deleteCommentById(data_id, comment_id);
   if (result == "done") {
-    window.location.href = `./index.html?data=${data_id}`;
+    window.location.href = `../index/index.html?mode=${mode}`;
   } else if (result == "error") {
     alert("Error while deleting comment");
   }
@@ -107,7 +113,15 @@ function create_comments(comments) {
   });
 }
 
-const toggleSwitch = document.getElementById("toggleSwitch");
+const urlInBrowser = new URLSearchParams(window.location.search).get("mode");
+if (urlInBrowser != null) {
+  if (urlInBrowser == "light") {
+    document.documentElement.setAttribute("data-theme", "light");
+  } else {
+    document.documentElement.setAttribute("data-theme", "dark");
+    toggleSwitch.checked = true;
+  }
+}
 
 toggleSwitch.addEventListener("change", function () {
   if (this.checked) {
@@ -117,10 +131,10 @@ toggleSwitch.addEventListener("change", function () {
     const url = new URL(window.location.href);
     if (urlInBrowser == null) {
       document.documentElement.setAttribute("data-theme", "dark");
-      let updatedUrl = `${url}?&mode=dark`;
+      let updatedUrl = `${url}?mode=dark`;
       window.history.pushState({ path: updatedUrl }, "", updatedUrl);
-    } else if(urlInBrowser === "light"){
-      url.searchParams.set('mode','dark');
+    } else if (urlInBrowser === "light") {
+      url.searchParams.set("mode", "dark");
       document.documentElement.setAttribute("data-theme", "dark");
       let updatedUrl = url.toString();
       window.history.pushState({ path: updatedUrl }, "", updatedUrl);
@@ -132,11 +146,11 @@ toggleSwitch.addEventListener("change", function () {
     const url = new URL(window.location.href);
     if (urlInBrowser == null) {
       document.documentElement.setAttribute("data-theme", "light");
-      let updatedUrl = `${url}?&mode=light`;
+      let updatedUrl = `${url}?mode=light`;
       window.history.pushState({ path: updatedUrl }, "", updatedUrl);
-    } else if(urlInBrowser === "dark"){
+    } else if (urlInBrowser === "dark") {
       document.documentElement.setAttribute("data-theme", "light");
-      url.searchParams.set('mode','light');
+      url.searchParams.set("mode", "light");
       let updatedUrl = url.toString();
       window.history.pushState({ path: updatedUrl }, "", updatedUrl);
     }

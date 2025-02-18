@@ -1,3 +1,26 @@
+:root {
+  --background-color: #ffffff;
+  --text-color: #444;
+  --header-background-color: #f0f0f0;
+  --header-text-color: #333;
+  --comment-text-color: #666;
+  --slider-background-color: #ccc;
+  --slider-checked-background-color: #2196F3;
+  --button-background-color : #fff;
+  --button-color : #333;
+}
+
+[data-theme="dark"] {
+  --background-color: #333;
+  --text-color: #ddd;
+  --header-background-color: #444;
+  --header-text-color: #fff;
+  --comment-text-color: #bbb;
+  --slider-background-color: #555;
+  --slider-checked-background-color: #4CAF50;
+  --button-background-color : #333;
+  --button-color : #fff;
+}
 * {
   margin: 0;
   padding: 0;
@@ -21,7 +44,7 @@ body {
   height: fit-content;
   border: 1px solid #ddd;
   border-radius: 3px;
-  background-color: var(--background-color);
+  background-color: var(--header-background-color);
   border-left: 4px solid #ddd;
   padding: 10px 15px;
   margin-bottom: 10px;
@@ -33,7 +56,6 @@ body {
   display: flex;
   color: var(--header-text-color);
   justify-content: space-between;
-  background-color: var(--header-background-color);
 }
 
 .comment-desc {
@@ -57,7 +79,7 @@ span {
   width: 50%;
   height: 50%;
   display: flex;
-  background-color: rgb(242, 234, 234);
+  background-color: var(--background-color);
   justify-content: center;
   align-items: center;
   flex-direction: column;

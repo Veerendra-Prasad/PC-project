@@ -41,9 +41,14 @@ class post extends HTMLElement {
   connectedCallback() {
     this.shadowRoot.querySelector(".post").addEventListener("click", () => {
       const url = new URLSearchParams(window.location.search).get("data");
-      if (url === null || !url.includes(this.getAttribute("data-id"))) {
-        const newUrl = `./index.html?data=${this.getAttribute("data-id")}`;
-        window.history.pushState(null, "", newUrl);
+      if (url === null) {
+        const newUrl = new URL(window.location.href);
+        newUrl.searchParams.append("data",this.getAttribute("data-id"));
+        window.history.pushState(null, "", newUrl.toString());
+      } else {
+        const newUrl = new URL(window.location.href);
+        newUrl.searchParams.set("data",this.getAttribute("data-id"));
+        window.history.replaceState(null, "", newUrl.toString());
       }
     });
   }

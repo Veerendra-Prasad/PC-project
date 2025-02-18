@@ -1,3 +1,26 @@
+:root {
+  --background-color: #ffffff;
+  --text-color: #444;
+  --header-background-color: #f0f0f0;
+  --header-text-color: #333;
+  --comment-text-color: #666;
+  --slider-background-color: #ccc;
+  --slider-checked-background-color: #2196F3;
+  --button-background-color : #fff;
+  --button-color : #333;
+}
+
+[data-theme="dark"] {
+  --background-color: #333;
+  --text-color: #ddd;
+  --header-background-color: #444;
+  --header-text-color: #fff;
+  --comment-text-color: #bbb;
+  --slider-background-color: #555;
+  --slider-checked-background-color: #4CAF50;
+  --button-background-color : #333;
+  --button-color : #fff;
+}
 * {
   margin: 0;
   padding: 0;

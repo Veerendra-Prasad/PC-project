@@ -88,7 +88,6 @@ body {
 
 .content-container {
   width: 100%;
-  padding: 20px;
 }
 
 .content-header {
@@ -109,12 +108,14 @@ body {
 
 .content-body section {
   margin-bottom: 20px;
+  padding-left: 3px;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .container {
     margin: 0px;
+    width: 100%;
   }
   .button-container {
     flex-direction: column;
